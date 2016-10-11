@@ -1,12 +1,16 @@
+<?php
+/*
+Template Name: Отзывы
+*/
+?>
+
 <?php get_header(); ?>
 
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
-<section class="for-you flex" style="background-image: url(<?php $thumb_id = get_post_thumbnail_id();
-                                    $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
-                                    echo $thumb_url[0]; ?>)">
+<section class="for-you flex" style="background-image: url('<?php echo get_template_directory_uri(); ?>/app/img/category-products.png')">
 </section>
 
-<section class="vigoda-inner">
+<section class="responce-inner">
   <div class="container">
    <div class="row">
      <div class="col-md-12">

@@ -80,6 +80,14 @@ body {
 input {
   outline: none; }
 
+::-moz-selection {
+  background: rgba(255, 192, 34, 0.5);
+  color: #000; }
+
+::selection {
+  background: rgba(255, 192, 34, 0.5);
+  color: #000; }
+
 .align-right {
   text-align: right; }
 
@@ -284,6 +292,129 @@ header {
   100% {
     bottom: 30px; } }
 
+/* ___________________________ section category-products inner-page ___________________________ */
+.product-list {
+  padding-top: 60px;
+  background: #ECE7DE; }
+
+.product-item {
+  padding: 0 80px;
+  margin-bottom: 50px; }
+  .product-item:nth-child(odd) {
+    padding-right: 25px; }
+  .product-item:nth-child(even) {
+    padding-left: 25px; }
+  .product-item .wrapper {
+    padding: 0px 0px 30px 0px;
+    border-bottom: 3px solid #BB232D;
+    background: #fff; }
+    .product-item .wrapper h2 {
+      background: #FFC022;
+      padding: 12px 0;
+      color: #000;
+      font-size: 26px; }
+    .product-item .wrapper ul {
+      margin: 0;
+      padding: 10px 40px 0 40px; }
+      .product-item .wrapper ul li {
+        list-style: none;
+        display: inline;
+        font-size: 16px; }
+        .product-item .wrapper ul li:after {
+          content: ';'; }
+  .product-item .content {
+    height: 130px;
+    overflow: hidden;
+    position: relative; }
+    .product-item .content:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(#fff));
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), #fff);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), #fff);
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px; }
+  .product-item .price {
+    width: 140px;
+    position: relative;
+    margin: 0 auto;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 140px;
+    background: url("../img/price.png") no-repeat;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    margin-top: -82px; }
+    .product-item .price p {
+      width: 100%;
+      font-size: 40px;
+      font-family: "Open Sans";
+      line-height: 48px;
+      margin-bottom: 0;
+      font-weight: 900;
+      color: #000; }
+    .product-item .price div {
+      color: gray; }
+  .product-item .thumb img {
+    padding: 15px;
+    width: 100%;
+    height: auto; }
+  .product-item .more {
+    background: #BB232D;
+    border-bottom: 3px solid #901b23;
+    -webkit-transition: .2s;
+    transition: .2s; }
+    .product-item .more:hover {
+      background: #901b23; }
+    .product-item .more a {
+      padding: 15px 0;
+      display: block;
+      color: #fff; }
+  .product-item .bron {
+    background: #d9d9d9;
+    border-bottom: 3px solid #b3b3b3;
+    -webkit-transition: .2s;
+    transition: .2s; }
+    .product-item .bron:hover {
+      background: #c4c4c4; }
+    .product-item .bron a {
+      padding: 15px 0;
+      display: block;
+      color: #901b23; }
+
+/* ___________________________ section photo_and_video inner-page ___________________________ */
+.photo_and_video {
+  padding: 20px 0 60px; }
+  .photo_and_video .a_h3 {
+    background: #f7f7f7;
+    display: block;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+    -webkit-transition: .2s;
+    transition: .2s; }
+    .photo_and_video .a_h3:hover {
+      background: #ECE7DE; }
+      .photo_and_video .a_h3:hover h3 {
+        color: #BB232D; }
+  .photo_and_video a h3 {
+    color: #901b23;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: .2s;
+    transition: .2s; }
+  .photo_and_video img {
+    width: 100%;
+    height: auto; }
+
 /* ___________________________ section for-you inner-page ___________________________ */
 .for-you {
   background-size: cover;
@@ -325,7 +456,9 @@ header {
   .vigoda-inner .img_gallery {
     position: relative;
     top: -60px;
-    border: 8px solid #fff; }
+    border: 1px solid whitesmoke;
+    padding: 8px;
+    background: #fff; }
     .vigoda-inner .img_gallery .gallery-item {
       background-size: cover;
       background-position: 50% 50%;
@@ -581,6 +714,22 @@ header {
     font-family: "Open Sans Semi Bold Italic";
     font-size: 14px;
     color: #905D4C; }
+
+/* ___________________________ section responce-inner ___________________________ */
+.responce-inner .testimonial-inner {
+  padding-left: 70px !important;
+  font-size: 15px;
+  padding-left: 70px;
+  background: url("../img/otzyv.png") no-repeat 13px 24px; }
+  .responce-inner .testimonial-inner .readmore {
+    color: #901b23;
+    display: block; }
+
+.responce-inner .testimonial-name {
+  padding-left: 70px;
+  font-family: "Open Sans Semi Bold Italic" !important;
+  font-size: 14px !important;
+  color: #905D4C; }
 
 /* ___________________________ footer ___________________________ */
 footer {
