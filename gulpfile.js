@@ -37,7 +37,10 @@ gulp.task('scripts', function() {
         'app/libs/modernizr.js',
         'app/libs/jquery/dist/jquery.js',
         'app/libs/bootstrap/dist/js/bootstrap.js',
-        'app/libs/owl.carousel/owl.carousel.js'
+        'app/libs/owl.carousel/owl.carousel.js',
+        'app/libs/headroom.js/dist/jQuery.headroom.js',
+        'app/libs/headroom.js/dist/headroom.js',
+        'app/libs/jquery.scrollTo/jquery.scrollTo.js'
         ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
