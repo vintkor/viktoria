@@ -42,7 +42,18 @@
      </div>
      <div class="col-md-8">
        <h1><?php the_title(); ?></h1>
+       <?php if(has_category('products')): ?>
+       <div class="price flex">
+         <div>Цена</div>
+           <p><?php the_field('new_price'); ?></p>
+         <div>грн./сутки</div>
+       </div>
+        <button>Забронировать сейчас</button>
+        <?php endif; ?>
        <?php the_content(); ?>
+       <?php if(has_category('products')): ?>
+       <a href="#" class="d3">Смотреть 3D-тур</a>
+        <?php endif; ?>
      </div>
    </div>
   </div>

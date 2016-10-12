@@ -356,8 +356,7 @@ header {
 
 /* ___________________________ section category-products inner-page ___________________________ */
 .product-list {
-  padding-top: 60px;
-  background: #ECE7DE; }
+  padding-top: 60px; }
 
 .product-item {
   padding: 0 80px;
@@ -369,11 +368,10 @@ header {
   .product-item .wrapper {
     padding: 0px 0px 30px 0px;
     border-bottom: 3px solid #BB232D;
-    background: #fff; }
+    background: #ECE7DE; }
     .product-item .wrapper h2 {
-      background: #FFC022;
       padding: 12px 0;
-      color: #000;
+      color: #905D4C;
       font-size: 26px; }
     .product-item .wrapper ul {
       margin: 0;
@@ -387,14 +385,15 @@ header {
   .product-item .content {
     height: 130px;
     overflow: hidden;
-    position: relative; }
+    position: relative;
+    color: #666; }
     .product-item .content:after {
       content: "";
       display: block;
       position: absolute;
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(#fff));
-      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), #fff);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), #fff);
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 231, 222, 0.5)), to(#ECE7DE));
+      background: -webkit-linear-gradient(top, rgba(236, 231, 222, 0.5), #ECE7DE);
+      background: linear-gradient(180deg, rgba(236, 231, 222, 0.5), #ECE7DE);
       bottom: 0;
       left: 0;
       width: 100%;
@@ -423,7 +422,7 @@ header {
       line-height: 48px;
       margin-bottom: 0;
       font-weight: 900;
-      color: #000; }
+      color: #905D4C; }
     .product-item .price div {
       color: gray; }
   .product-item .thumb img {
@@ -514,7 +513,66 @@ header {
   padding: 20px 0 60px; }
   .vigoda-inner h1 {
     margin-bottom: 40px;
-    color: #901b23; }
+    color: #901b23;
+    margin-left: 40px; }
+  .vigoda-inner .price {
+    width: 140px;
+    position: relative;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 140px;
+    background: url("../img/price.png") no-repeat;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    text-align: center;
+    margin-left: 40px;
+    margin-bottom: 40px; }
+    .vigoda-inner .price p {
+      width: 100%;
+      font-size: 40px;
+      font-family: "Open Sans";
+      line-height: 48px;
+      margin-bottom: 0;
+      font-weight: 900;
+      color: #905D4C; }
+    .vigoda-inner .price div {
+      color: gray; }
+  .vigoda-inner button {
+    margin-left: 40px;
+    background: #FFC022;
+    border: none;
+    padding: 10px 35px;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    z-index: 20;
+    text-transform: uppercase;
+    -webkit-transition: .2s;
+    transition: .2s;
+    display: inline-block; }
+    .vigoda-inner button:hover {
+      background: #eeaa00; }
+  .vigoda-inner ul {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: block; }
+  .vigoda-inner .d3 {
+    margin-left: 40px;
+    border: 1px solid #BB232D;
+    color: #BB232D;
+    padding: 7px 25px;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-transition: .2s;
+    transition: .2s; }
+    .vigoda-inner .d3:hover {
+      background: #BB232D;
+      color: #fff; }
   .vigoda-inner .img_gallery {
     position: relative;
     top: -60px;
@@ -526,6 +584,13 @@ header {
       background-position: 50% 50%;
       height: 150px;
       position: relative; }
+  .vigoda-inner li {
+    background: url("../img/plus.png") no-repeat left center;
+    padding-left: 30px;
+    list-style: none;
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: #666; }
   .vigoda-inner .item {
     position: relative; }
     .vigoda-inner .item:hover:after {
@@ -583,7 +648,8 @@ header {
   position: relative;
   background: #ECE7DE; }
   .vigoda h2 {
-    margin-top: 140px; }
+    margin-top: 140px;
+    color: #905D4C; }
   .vigoda img {
     width: 100%;
     height: auto; }
@@ -603,6 +669,9 @@ header {
     margin-bottom: 140px; }
     .vigoda a:hover {
       background: #901b23; }
+  .vigoda p {
+    color: #666666;
+    font-size: 17px; }
   .vigoda .super-img {
     position: absolute;
     width: 50%;
@@ -674,10 +743,10 @@ header {
     text-transform: uppercase; }
   .triggers-2 .more p {
     margin-top: 40px;
-    color: #901b23;
-    font-size: 18px;
+    color: #905D4C;
+    font-size: 20px;
     font-family: "Open Sans";
-    font-weight: 400;
+    font-weight: 300;
     text-transform: none; }
 
 /* ___________________________ section products ___________________________ */
@@ -705,8 +774,9 @@ header {
       width: 100%;
       height: auto; }
     .products .one-product h3 {
-      background: #FFC022;
-      font-size: 20px;
+      background: #905D4C;
+      color: #fff;
+      font-size: 18px;
       padding: 10px 0;
       margin: 0; }
     .products .one-product .wrapper {
@@ -714,7 +784,7 @@ header {
       -webkit-transition: .2s;
       transition: .2s; }
       .products .one-product .wrapper .price {
-        color: #000;
+        color: #905D4C;
         font-size: 40px;
         font-family: "Open Sans";
         font-weight: 900;
@@ -729,15 +799,14 @@ header {
           width: 120px;
           margin-left: -60px;
           height: 2px;
-          background: #e6e6e6; }
+          background: #905D4C; }
       .products .one-product .wrapper a {
         padding: 10px 20px;
         color: #BB232D;
         font-size: 16px;
         display: block;
         -webkit-transition: .2s;
-        transition: .2s;
-        border-bottom: 3px solid #BB232D; }
+        transition: .2s; }
         .products .one-product .wrapper a:hover {
           background: #e6e6e6; }
 

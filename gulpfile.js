@@ -11,10 +11,10 @@ var gulp        = require('gulp'), // Подключаем Gulp
     imagemin    = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
     pngquant    = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
     cache       = require('gulp-cache'), // Подключаем библиотеку кеширования
-    autoprefixer= require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
-    htmlreplace = require('gulp-html-replace');// Замена "src" в index.html main.js на main.min.js
-    var htmlmin = require('gulp-htmlmin');
-
+    autoprefixer= require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов
+    htmlreplace = require('gulp-html-replace'),// Замена "src" в index.html main.js на main.min.js
+    htmlmin     = require('gulp-htmlmin'),
+    sftp         = require('gulp-sftp');
 gulp.task('sass', function(){ // Создаем таск Sass
     return gulp.src('app/sass/**/*.scss') // Берем источник
         .pipe(sass().on('error', sass.logError)) // Преобразуем Sass в CSS посредством gulp-sass
@@ -30,6 +30,17 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
         },
         notify: false // Отключаем уведомления
     });
+});
+
+gulp.task('sftp', function () {
+    return gulp.src('app/css/main.css')
+        .pipe(sftp({
+            host: '91.234.34.20',
+            user: 'remote',
+            pass: '8z1ErCOY',
+            remotePath: '/var/www/remote/data/www/viktoria.organica.pp.ua/wp-content/themes/viktoria/app/css'
+        }))
+        .pipe(gutil.noop());
 });
 
 gulp.task('scripts', function() {
@@ -55,10 +66,10 @@ gulp.task('css-libs', ['sass'], function() {
 });
 
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
-    gulp.watch('app/sass/**/*.scss', ['sass']); // Наблюдение за sass файлами
-    gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch('app/js/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
-    // Наблюдение за другими типами файлов
+    gulp.watch('app/sass/**/*.scss', ['sass']);
+    gulp.watch('app/*.html', browserSync.reload);
+    gulp.watch('app/js/**/*.js', browserSync.reload);
+    gulp.watch('app/css/main.css', ['sftp']);
 });
 
 // ----------------------Очистка кеша gulp clear ----------------------------

@@ -6,6 +6,7 @@ $bad-red: #905D4C;
 $yellow: #FFC022;
 $bad-yellow: #ECE7DE;
 
+
 @import "_fonts";
 
 html {
@@ -299,7 +300,6 @@ header {
 /* ___________________________ section category-products inner-page ___________________________ */
 .product-list {
 	padding-top: 60px;
-	background: $bad-yellow;
 }
 .product-item {
 	padding: 0 80px;
@@ -313,11 +313,10 @@ header {
 	.wrapper {
 		padding: 0px 0px 30px 0px;
 		border-bottom: 3px solid $red;
-		background: $white;
+		background: $bad-yellow;
 		h2 {
-			background: $yellow;
 			padding: 12px 0;
-			color: $black;
+			color: $bad-red;
 			font-size: 26px;
 		}
 		ul {
@@ -337,11 +336,12 @@ header {
 		height: 130px;
 		overflow: hidden;
 		position: relative;
+		color: #666;
 		&:after {
 			content: "";
 			display: block;
 			position: absolute;
-			background: linear-gradient(180deg, rgba($white, .5), $white);
+			background: linear-gradient(180deg, rgba($bad-yellow, .5), $bad-yellow);
 			bottom: 0;
 			left: 0;
 			width: 100%;
@@ -365,7 +365,7 @@ header {
 			line-height: 48px;
 			margin-bottom: 0;
 			font-weight: 900;
-			color: $black;
+			color: $bad-red;
 		}
 		div {
 			color: darken($white, 50%);
@@ -465,9 +465,68 @@ header {
 }
 .vigoda-inner {
 	padding: 20px 0 60px;
+
 	h1 {
 		margin-bottom: 40px;
 		color: darken($red, 10%);
+		margin-left: 40px;
+	}	
+	.price {
+		width: 140px;
+		position: relative;
+		justify-content: center;
+		height: 140px;
+		background: url("../img/price.png") no-repeat;
+		align-content: center;
+		flex-wrap: wrap;
+		text-align: center;
+		margin-left: 40px;
+		margin-bottom: 40px;
+		p {
+			width: 100%;
+			font-size: 40px;
+			font-family: "Open Sans";
+			line-height: 48px;
+			margin-bottom: 0;
+			font-weight: 900;
+			color: $bad-red;
+		}
+		div {
+			color: darken($white, 50%);
+
+		}
+	}
+	button {
+		margin-left: 40px;
+		background: $yellow;
+		border: none;
+		padding: 10px 35px;
+		border-radius: 3px;
+		z-index: 20;
+		text-transform: uppercase;
+		transition: .2s;
+		
+		display: inline-block;
+		&:hover {
+			background: darken($yellow, 10%);
+		}
+	}
+	ul {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		display: block;
+	}
+	.d3 {
+		margin-left: 40px;
+		border: 1px solid $red;
+		color: $red;
+		padding: 7px 25px;
+		border-radius: 3px;
+		transition: .2s;
+		&:hover {
+			background: $red;
+			color: $white;
+		}
 	}
 	.img_gallery {
 		position: relative;
@@ -481,6 +540,14 @@ header {
 			height: 150px;
 			position: relative;
 		}
+	}
+	li {
+		background: url("../img/plus.png") no-repeat left center;
+		padding-left: 30px;
+		list-style: none;
+		margin-bottom: 10px;
+		font-size: 17px;
+		color: #666;
 	}
 	.item {
 		position: relative;
@@ -568,6 +635,7 @@ header {
 	background: $bad-yellow;
 	h2 {
 		margin-top: 140px;
+		color: $bad-red;
 	}
 	img {
 		width: 100%;
@@ -589,6 +657,10 @@ header {
 		&:hover {
 			background: darken($red, 10%);
 		}
+	}
+	p {
+		color: #666666;
+		font-size: 17px;
 	}
 	.super-img {
 		position: absolute;
@@ -669,10 +741,10 @@ header {
 	.more {
 		p {
 			margin-top: 40px;
-			color: darken($red, 10%);
-			font-size: 18px;
+			color: $bad-red;
+			font-size: 20px;
 			font-family: "Open Sans";
-			font-weight: 400;
+			font-weight: 300;
 			text-transform: none;
 		}
 	}
@@ -704,8 +776,9 @@ header {
 			height: auto;
 		}
 		h3 {
-			background: $yellow;
-			font-size: 20px;
+			background: $bad-red;
+			color: $white;
+			font-size: 18px;
 			padding: 10px 0;
 			margin: 0;
 		}
@@ -713,7 +786,7 @@ header {
 			background: $white;
 			transition: .2s;
 			.price {
-				color: $black;
+				color: $bad-red;
 				font-size: 40px;
 				font-family: "Open Sans";
 				font-weight: 900;
@@ -728,7 +801,7 @@ header {
 					width: 120px;
 					margin-left: -60px;
 					height: 2px;
-					background: darken($white, 10%);
+					background: $bad-red;
 				}
 			}
 			a {
@@ -737,7 +810,6 @@ header {
 				font-size: 16px;
 				display: block;
 				transition: .2s;
-				border-bottom: 3px solid $red;
 				&:hover {
 					background: darken($white, 10%);
 				}
