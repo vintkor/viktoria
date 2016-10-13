@@ -51,7 +51,8 @@ gulp.task('scripts', function() {
         'app/libs/owl.carousel/owl.carousel.js',
         'app/libs/headroom.js/dist/jQuery.headroom.js',
         'app/libs/headroom.js/dist/headroom.js',
-        'app/libs/jquery.scrollTo/jquery.scrollTo.js'
+        'app/libs/jquery.scrollTo/jquery.scrollTo.js',
+        'app/libs/jquery.maskedinput/dist/jquery.maskedinput.js'
         ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл

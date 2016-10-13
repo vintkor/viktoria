@@ -40,8 +40,5 @@ $(document).ready(function(){
 
 	$('.headroom').headroom();
     
-})
-
-
-
+});
 

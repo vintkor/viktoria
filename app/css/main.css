@@ -964,3 +964,9 @@ footer {
     font-family: "Open Sans"; }
   footer .like-h2 p {
     font-size: 30px; }
+
+/* ___________________________ Modals ___________________________ */
+#yamaps {
+  width: 100%;
+  height: 500px;
+  padding: 20px; }

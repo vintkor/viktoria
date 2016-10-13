@@ -34,8 +34,8 @@
         <p><img src="<?php echo get_template_directory_uri(); ?>/app/img/map.png"> <?php the_field('address'); ?></p>
       </div>
       <div class="col-md-12 align-center">
-        <button class="first"><?php the_field('maps'); ?></button>
-        <button class="second"><?php the_field('bron'); ?></button>
+        <button class="first" data-toggle="modal" data-target=".bs-example-modal-lg1"><?php the_field('maps'); ?></button>
+        <button class="second" data-toggle="modal" data-target=".zabronirovat"><?php the_field('bron'); ?></button>
       </div>
       <div class="col-md-8">
         <div class="footer-menu">
@@ -58,5 +58,112 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+<!-- Modal maps -->
+<?php if ( have_posts() ) : query_posts('page_id=159'); while (have_posts()) : the_post(); ?>
+<div class="modal fade bs-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content col-sm-12">           
+      <div class="modal-header">
+        <h3><?php the_field('address'); ?></h3>      
+      </div>
+      <div class="modal-body">
+        <div id="yamaps"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  /*-------------------------------- Яндекс карта в модале --------------------------------*/
+  ymaps.ready(init);
+
+  function init () {
+      var myMap = new ymaps.Map("yamaps", {
+              center: [48.353916, 24.420056],
+              zoom: 16
+          }),
+          myPlacemark = new ymaps.Placemark([48.353916, 24.420056], {
+              balloonContentHeader: "<?php echo get_bloginfo('name');?>",
+              balloonContentBody: "<?php echo get_bloginfo('description');?>",
+              balloonContentFooter: "<?php the_field('phone_1'); ?>  <?php the_field('e_mail'); ?>",
+              hintContent: "<?php echo get_bloginfo('name');?>"
+          });
+
+      myMap.geoObjects.add(myPlacemark);
+      myMap.controls
+          .add('zoomControl', { left: 5, top: 5 })
+  };
+</script>
+
+<!-- Modal забронировать сейчас -->
+<div class="modal fade zabronirovat" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content col-sm-12">           
+      <div class="modal-header">
+        <h3><?php the_field('bron'); ?></h3>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bron-name"><?php the_field('form_name'); ?></label>
+                <input id="bron-name" type="text" name="name" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bron-number"><?php the_field('form_number'); ?></label>
+                <input id="bron-number" type="text" name="number" class="form-control">
+              </div>            
+            </div>            
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="bron-date"><?php the_field('form_date'); ?></label>
+                <input id="bron-date" type="date" name="date" class="form-control">
+              </div>              
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="bron-days"><?php the_field('form_days'); ?></label>
+                <input id="bron-days" type="number" name="days" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="bron-people"><?php the_field('form_people'); ?></label>
+                <input id="bron-people" type="number" name="people" class="form-control">
+              </div>              
+            </div>
+            <div class="col-md-3">
+<? endwhile; endif; wp_reset_query(); ?>
+              <?php $idObj = get_category_by_slug('products'); $id = $idObj->term_id;
+              $n=8;
+              $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
+              <div class="form-group">
+                <label for="bron-room">Выберите тип номера</label>
+                <select class="form-control">
+                <?php while($recent->have_posts()) : $recent->the_post();?>
+                  <option name="bron-room"><?php the_title() ?></option>
+                <?php endwhile; ?>
+                </select>
+              </div>
+              <?php wp_reset_query(); ?>              
+            </div>
+          </div>
+          <hr>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>   
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
