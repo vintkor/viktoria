@@ -107,20 +107,20 @@
         <h3><?php the_field('bron'); ?></h3>
       </div>
       <div class="modal-body">
-        <form role="form">
+        <form role="form" id="ajaxform" action="">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="bron-name"><?php the_field('form_name'); ?></label>
-                <input id="bron-name" type="text" name="name" class="form-control">
+                <input id="bron-name" type="text" name="name" class="form-control name">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="bron-number"><?php the_field('form_number'); ?></label>
-                <input id="bron-number" type="text" name="number" class="form-control">
-              </div>            
-            </div>            
+                <input id="bron-number" type="text" name="number" class="form-control bron-number">
+              </div>
+            </div>
           </div>
           <div class="row">
             <div class="col-md-3">
@@ -148,9 +148,9 @@
               $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
               <div class="form-group">
                 <label for="bron-room">Выберите тип номера</label>
-                <select class="form-control">
+                <select name="room" class="form-control" id="bron-room">
                 <?php while($recent->have_posts()) : $recent->the_post();?>
-                  <option name="bron-room"><?php the_title() ?></option>
+                  <option><?php the_title() ?></option>
                 <?php endwhile; ?>
                 </select>
               </div>
@@ -158,12 +158,49 @@
             </div>
           </div>
           <hr>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>   
+          <input type="submit" name="submit" value="Забронировать" class="btn btn-success">
+          <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Закрыть</button>   
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+/*-------------------------------- Отправка почты на бронирование номера из футера ---------------------------------*/
+
+$("#ajaxform").submit(function(){
+
+   var form = $(this);
+   var error = false;
+
+   form.find('input').each( function(){
+       if ($('.bron-number').val() == '') {
+           sweetAlert("Ой...", "Необходимо указать номер телефона!", "error");
+           error = true;
+       }
+   });
+
+   if (!error) {
+       var data = form.serialize();
+       $('.zabronirovat').modal('toggle');
+       $.ajax({
+           type: 'POST',
+           url: '<?php echo get_template_directory_uri(); ?>/footer-bron.php',
+           dataType: 'json',
+           data: data,
+           beforeSend: function(data) {
+               form.find('.send').attr('disabled', 'disabled');
+           },
+           complete: function(data) {
+               swal("Отлично!", "Менеджер-консультант свяжется с Вами в ближайшее время.", "success");
+           }
+
+       });
+   }
+   return false;
+});
+</script>
 
 </body>
 </html>

@@ -37,7 +37,7 @@
                 <?php the_content(); ?>                
               </div>
               <div class="col-md-6 bron">
-                <a href="#">Забронировать</a>
+                <a href="#" data-toggle="modal" data-target=".zabronirovat-<?php the_ID(); ?>">Забронировать</a>
               </div>
               <div class="col-md-6 more">
                 <a class="" href="<?php the_permalink() ?>">Подробнее >></a>                
@@ -50,6 +50,97 @@
     </div>
   </div>
 </section>
+
+
+<?php if (have_posts()): while (have_posts()): the_post(); ?>
+<div class="modal fade zabronirovat-<?php the_ID(); ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content col-sm-12">           
+      <div class="modal-header">
+        <h3>Вы бронируете номер - <span class="form-red"><?php the_title(); ?></span></h3>
+      </div>
+      <div class="modal-body">
+        <form role="form" id="ajaxform-<?php the_ID(); ?>" action="">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bron-name"><?php the_field('form_name', 159); ?></label>
+                <input id="bron-name" type="text" name="name" class="form-control name">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bron-number"><?php the_field('form_number', 159); ?></label>
+                <input id="bron-number" type="text" name="number" class="form-control bron-number bron-number-<?php the_ID(); ?>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="bron-date"><?php the_field('form_date', 159); ?></label>
+                <input id="bron-date" type="date" name="date" class="form-control">
+              </div>              
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="bron-days"><?php the_field('form_days', 159); ?></label>
+                <input id="bron-days" type="number" name="days" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="bron-people"><?php the_field('form_people', 159); ?></label>
+                <input id="bron-people" type="number" name="people" class="form-control">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <input type="hidden" name="room" value="<?php the_title(); ?>">
+          <input type="submit" name="submit" value="Забронировать" class="btn btn-success">
+          <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Закрыть</button>   
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/*-------------------------------- Отправка почты на бронирование номера из категории "номера и цены" ---------------------------------*/
+
+$("#ajaxform-<?php the_ID(); ?>").submit(function(){
+
+   var form = $(this);
+   var error = false;
+
+   form.find('input').each( function(){
+       if ($('.bron-number-<?php the_ID(); ?>').val() == '') {
+           sweetAlert("Ой...", "Необходимо указать номер телефона!", "error");
+           error = true;
+       }
+   });
+
+   if (!error) {
+       var data = form.serialize();
+       $('.zabronirovat-<?php the_ID(); ?>').modal('toggle');
+       $.ajax({
+           type: 'POST',
+           url: '<?php echo get_template_directory_uri(); ?>/footer-bron.php',
+           dataType: 'json',
+           data: data,
+           beforeSend: function(data) {
+               form.find('.send').attr('disabled', 'disabled');
+           },
+           complete: function(data) {
+               swal("Отлично!", "Менеджер-консультант свяжется с Вами в ближайшее время.", "success");
+           }
+
+       });
+   }
+   return false;
+});
+</script>
+<?php endwhile; endif;?>
 
 
 <?php get_footer(); ?>
