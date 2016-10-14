@@ -55,7 +55,7 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 <div class="modal fade zabronirovat-<?php the_ID(); ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content col-sm-12">           
+    <div class="modal-content col-sm-12">
       <div class="modal-header">
         <h3>Вы бронируете номер - <span class="form-red"><?php the_title(); ?></span></h3>
       </div>

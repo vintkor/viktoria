@@ -166,14 +166,11 @@ h1, h2, h3, h4, h5, h6 {
           transform: translateY(0); }
 
 .headroom--not-top {
-  background: rgba(0, 0, 0, 0.7);
-  border-bottom: 1px solid rgba(255, 192, 34, 0.7);
+  background: #905D4C;
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
   -webkit-transition: all ease-in-out .2s;
   transition: all ease-in-out .2s; }
-  .headroom--not-top:hover {
-    background: black; }
 
 /* ___________________________ Header ___________________________ */
 header {
@@ -974,3 +971,13 @@ footer {
 .form-red {
   color: #BB232D;
   font: inherit; }
+
+.modal-content {
+  background: #ECE7DE; }
+  .modal-content .btn-success {
+    background: #905D4C;
+    border: none;
+    -webkit-transition: .2s;
+    transition: .2s; }
+    .modal-content .btn-success:hover {
+      background: #6f473a; }
