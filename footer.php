@@ -150,7 +150,7 @@
                 <label for="bron-room">Выберите тип номера</label>
                 <select name="room" class="form-control" id="bron-room">
                 <?php while($recent->have_posts()) : $recent->the_post();?>
-                  <option><?php the_title() ?></option>
+                  <option><?php the_title(); ?></option>
                 <?php endwhile; ?>
                 </select>
               </div>

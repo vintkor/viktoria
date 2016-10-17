@@ -71,7 +71,7 @@ gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
     gulp.watch('app/sass/**/*.scss', ['sass']);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/js/**/*.js', browserSync.reload);
-    gulp.watch('app/css/main.css', ['sftp']);
+    // gulp.watch('app/css/main.css', ['sftp']);
 });
 
 // ----------------------Очистка кеша gulp clear ----------------------------

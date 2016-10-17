@@ -12,7 +12,7 @@ Template Name: Главная
   <div class="h-1">
     <h1><?php the_field('home_desc'); ?></h1>
   </div>
-  <button><?php the_field('button_1'); ?></button>
+  <button data-toggle="modal" data-target=".zabronirovat"><?php the_field('bron', 159); ?></button>
     <div class="bounce">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.4 490.4" style="enable-background:new 0 0 490.4 490.4;" xml:space="preserve" width="60px" height="60px">
     <g>

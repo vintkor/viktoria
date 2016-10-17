@@ -33,22 +33,22 @@
 <header class="headroom">
   <div class="container">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2 col-lg-2">
       <a href="/">
         <img src="<?php echo get_template_directory_uri(); ?>/app/img/logo.png" class="logo">
       </a>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-7 col-lg-6">
         <nav>
           <?php wp_nav_menu( array( 'theme_location' => 'top-menu') ); ?>
         </nav>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-lg-2">
         <?php if ( have_posts() ) : query_posts('page_id=159'); while (have_posts()) : the_post(); ?>
         <p class="phone"><?php the_field('header_phone'); ?> <img src="<?php echo get_template_directory_uri(); ?>/app/img/viber.png"></p>
         <? endwhile; endif; wp_reset_query(); ?>
       </div>
-      <div class="col-md-2 lang">
+      <div class="col-md-1 lang col-lg-2">
         <?php dynamic_sidebar('lang'); ?>
       </div>
     </div>
