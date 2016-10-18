@@ -1,4 +1,47 @@
 @media (max-width: 1200px) {
 
+	/* ___________________________ Header ___________________________ */
+
+	header {
+		p {
+			padding-top: 17px;
+			font-size: 13px;
+		}
+		.logo {
+			width: 100px;
+			height: 83px;
+		}
+		ul {
+			text-align: center;
+		}
+	}
+
+	/* ___________________________ section about ___________________________ */
+
+	.about {
+		h3 {
+			padding: 7px 14px;
+			font-size: 12px;
+		}
+	}
+
+	/* ___________________________ section triggers-2 ___________________________ */
+
+	.triggers-2 {
+		.col-md-3:nth-child(5) {
+			clear: both;
+		}
+	}
+
+	/* ___________________________ section vigoda ___________________________ */
+
+	.vigoda {
+		h2 {
+			margin-top: 70px;
+		}
+		a {
+			margin-bottom: 70px;
+		}
+	}
 	
 }

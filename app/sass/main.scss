@@ -111,6 +111,10 @@ h1,h2,h3,h4,h5,h6 {
 
 /* ___________________________ Header ___________________________ */
 
+.slicknav_menu {
+	display:none;
+}
+
 header {
 	position: absolute;
 	top: 0;
@@ -257,6 +261,7 @@ header {
 		height: 30vh;
 		background: linear-gradient(180deg, rgba($white, 0), rgba($black, .5));
 		bottom: 0;
+		left: 0;
 	}
 	&:before {
 		top: 0;
@@ -452,6 +457,7 @@ header {
 		height: 30vh;
 		background: linear-gradient(180deg, rgba($white, 0), rgba($black, .5));
 		bottom: 0;
+		left: 0;
 	}
 	&:before {
 		top: 0;
@@ -1045,6 +1051,6 @@ footer {
 
 
 
-// @import "_max-1200";
-// @import "_max-992";
+@import "_max-1200";
+@import "_max-992";
 // @import "_max-768";

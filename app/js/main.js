@@ -45,6 +45,15 @@ $(document).ready(function(){
 	jQuery(function($){
 	    $(".bron-number").mask("8 (999) 999-99-99");
 	});
+
+	/*-------------------------------- Мобильное меню сайта ---------------------------------*/
+
+	$(function(){
+		$('#menu-top-menu').slicknav({
+			prependTo:'#top-nav',
+			label: 'Меню сайта'
+		});
+	});
     
 });
 
