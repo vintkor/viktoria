@@ -5,7 +5,7 @@
     <h1><?php echo get_category_by_slug('uslugi')->description; ?></h1>
   </div>
   <div class="bounce">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.4 490.4" style="enable-background:new 0 0 490.4 490.4;" xml:space="preserve" width="60px" height="60px">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.4 490.4" style="enable-background:new 0 0 490.4 490.4;" xml:space="preserve">
     <g>
       <g>
         <path d="M490.4,245.2C490.4,110,380.4,0,245.2,0S0,110,0,245.2s110,245.2,245.2,245.2S490.4,380.4,490.4,245.2z M24.5,245.2 c0-121.7,99-220.7,220.7-220.7s220.7,99,220.7,220.7s-99,220.7-220.7,220.7S24.5,366.9,24.5,245.2z"/>
@@ -21,17 +21,17 @@
 <section id="bounce" class="product-list category-uslugi">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0">
         <div class="row">
           <?php if (have_posts()): while (have_posts()): the_post(); ?>
-          <div class="col-md-6 product-item align-center">
+          <div class="col-sm-6 product-item align-center">
             <div class="wrapper">
               <span class="thumb"><?php the_post_thumbnail(); ?></span>
               <h2><?php the_title(); ?></h2>
               <div class="content">
                 <?php the_excerpt(); ?>                
               </div>
-              <div class="col-md-12 more">
+              <div class="col-sm-12 more">
                 <a class="" href="<?php the_permalink() ?>">Подробнее >></a>                
               </div>
             </div>

@@ -14,7 +14,7 @@ Template Name: Главная
   </div>
   <button data-toggle="modal" data-target=".zabronirovat"><?php the_field('bron', 159); ?></button>
     <div class="bounce">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.4 490.4" style="enable-background:new 0 0 490.4 490.4;" xml:space="preserve" width="60px" height="60px">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.4 490.4" style="enable-background:new 0 0 490.4 490.4;" xml:space="preserve">
     <g>
       <g>
         <path d="M490.4,245.2C490.4,110,380.4,0,245.2,0S0,110,0,245.2s110,245.2,245.2,245.2S490.4,380.4,490.4,245.2z M24.5,245.2 c0-121.7,99-220.7,220.7-220.7s220.7,99,220.7,220.7s-99,220.7-220.7,220.7S24.5,366.9,24.5,245.2z"/>
@@ -34,7 +34,7 @@ Template Name: Главная
       $n=4;
       $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
       <?php while($recent->have_posts()) : $recent->the_post();?>
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-3">
         <?php the_post_thumbnail(); ?>
         <?php the_content(); ?>
       </div>
@@ -48,9 +48,9 @@ Template Name: Главная
   <div class="super-img" style="background-image: url(<?php echo get_template_directory_uri(); ?>/app/img/vigoda.png);"></div>
   <div class="container">
     <div class="row flex">
-      <div class="col-md-12">
+      <div class="col-sm-12">
         <div class="row">
-          <div class="col-md-6 col-md-offset-6">
+          <div class="col-sm-6 col-sm-offset-6">
             <h2><?php the_title();?></h2>
             <?php the_content() ?>
             <a href="<?php the_permalink() ?>">Подробнее >></a>
@@ -69,12 +69,12 @@ Template Name: Главная
       $n=8;
       $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
       <?php while($recent->have_posts()) : $recent->the_post();?>
-      <div class="col-md-3">
+      <div class="col-sm-3">
         <?php the_post_thumbnail(); ?>
         <?php the_content(); ?>
       </div>
       <?php endwhile; wp_reset_query(); ?>
-      <div class="col-md-12 more">
+      <div class="col-sm-12 more">
       <hr>
         <p>
           <?php echo category_description( 4 ); ?>
@@ -90,7 +90,7 @@ Template Name: Главная
   $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
   <?php while($recent->have_posts()) : $recent->the_post();?>
   <a href="<?php the_permalink() ?>">
-    <div class="col-md-3 flex about-item" style="background-image: url(<?php $thumb_id = get_post_thumbnail_id();
+    <div class="col-md-3 col-sm-4 flex about-item" style="background-image: url(<?php $thumb_id = get_post_thumbnail_id();
                                                  $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
                                                  echo $thumb_url[0]; ?>)">
       <h3><?php the_title(); ?></h3>
@@ -105,11 +105,11 @@ Template Name: Главная
       <?php $idObj = get_category_by_slug('products'); $id = $idObj->term_id;
       $n=8;
       $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
-      <div class="col-md-12 align-center">
+      <div class="col-sm-12 align-center">
         <h2>Номера и цены</h2>
       </div>
       <?php while($recent->have_posts()) : $recent->the_post();?>
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-4">
         <div class="one-product">
           <?php the_post_thumbnail(); ?>
           <h3><?php the_title() ?></h3>
@@ -126,31 +126,31 @@ Template Name: Главная
 
 <section class="photogallery">
   <div class="row">
-    <div class="col-md-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery1.png" alt=""></div>
-    <div class="col-md-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery2.png" alt=""></div>
-    <div class="col-md-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery3.png" alt=""></div>
-    <div class="col-md-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery4.png" alt=""></div>
-    <div class="col-md-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery5.png" alt=""></div>
-    <div class="col-md-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery6.png" alt=""></div>
+    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery1.png" alt=""></div>
+    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery2.png" alt=""></div>
+    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery3.png" alt=""></div>
+    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery4.png" alt=""></div>
+    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery5.png" alt=""></div>
+    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery6.png" alt=""></div>
   </div>
 </section>
 
 <section class="responce">
   <div class="container">
     <div class="row">
-      <div class="col-md-5 col-md-offset-1">
+      <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0">
         <blockquote>
           Отдыхали всей семьёй летом. Очень понравилось. Во-первых, очень чисто. В номерах пахнет деревом. Всё выглядит новым и аккуратным. Не смотря на солнце на улице в номере всегда свежо. Есть бассейн с подогревом. Отдых не хуже, чем в Европе. Машину не пришлось ставить где-то далеко, есть рядом своя парковка. В отеле свой ресторан. Как не странно, во всех остальных местах в Буковели цены на питание были заметно выше, чем здесь. Нам всем очень понравилось.
         </blockquote>
         <h5>Катя Киев</h5>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-5 col-sm-6">
         <blockquote>
           Цены на проживание не ниже и не выше, чем в любом другом отеле в Украине в данный период времени. Есть разные номера, на любой кошелёк. Но при этом во всех номерах чисто, комфортно, уютно и приятно пахнет деревом. Зимой с друзьями были на разных курортах Европы. Поэтому очень были удивлены, что в Буковели всё новее, удобнее, лучше и, самое главное, дешевле обходится, как само катание, так и, особенно, проживание. А уровень данного отеля ничем не хуже европейских аналогов.
         </blockquote>
         <h5>Елена Днепропетровск</h5>
       </div>
-      <div class="col-md-12 align-center">
+      <div class="col-sm-12 align-center">
         <a href="/%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%D1%8B">Читать все отзывы >></a>
       </div>
     </div>

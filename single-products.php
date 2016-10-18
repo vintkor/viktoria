@@ -19,14 +19,14 @@
 <section class="vigoda-inner">
   <div class="container">
    <div class="row">
-     <div class="col-md-4">
+     <div class="col-md-4 col-sm-5">
       <div class="row img_gallery">
         <div id='aniimated-thumbnials'>
 
          <?php
             for($i = 1; $i < 7; $i++) {
 
-                echo "<div class='col-md-6 gallery-item' style='background-image: url("; the_field("for_you_img_$i"); echo ")'>";
+                echo "<div class='col-sm-6 gallery-item' style='background-image: url("; the_field("for_you_img_$i"); echo ")'>";
                 echo "<a class='item' href='"; the_field("for_you_img_$i"); echo "'>";
 
                 echo "<img class='hidden' src='"; the_field("for_you_img_$i"); echo "'>";
@@ -40,7 +40,7 @@
         </div>
       </div>
      </div>
-     <div class="col-md-8">
+     <div class="col-md-8 col-sm-7">
        <h1><?php the_title(); ?></h1>
        <?php if(has_category('products')): ?>
        <div class="price flex">

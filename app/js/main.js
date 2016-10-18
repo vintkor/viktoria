@@ -51,7 +51,7 @@ $(document).ready(function(){
 	$(function(){
 		$('#menu-top-menu').slicknav({
 			prependTo:'#top-nav',
-			label: 'Меню сайта'
+			label: 'Меню'
 		});
 	});
     

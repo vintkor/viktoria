@@ -1,7 +1,7 @@
 <footer id="footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 align-center">
+      <div class="col-sm-12 align-center">
         <?php if ( have_posts() ) : query_posts('page_id=159'); while (have_posts()) : the_post(); ?>
         <span class="like-h2"><p><?php the_field('footer_h'); ?></p></span>
         <? endwhile; endif; wp_reset_query(); ?>
@@ -10,17 +10,18 @@
       $n=3;
       $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
       <?php while($recent->have_posts()) : $recent->the_post();?>
-      <div class="col-md-4">
+      <div class="col-sm-4">
         <div class="row flex triggers">
-          <div class="col-md-5 col-md-offset-1">
+          <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-0">
             <?php the_post_thumbnail(); ?>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5 col-sm-5">
             <?php the_content(); ?>
           </div>
         </div>
       </div>
       <?php endwhile; wp_reset_query(); ?>
+      <div class="clearfix"></div>
       <?php if ( have_posts() ) : query_posts('page_id=159'); while (have_posts()) : the_post(); ?>
       <div class="col-md-4 col-md-offset-4 align-center phone">
         <p>
@@ -30,14 +31,14 @@
           <?php the_field('e_mail'); ?>
         </p>
       </div>
-      <div class="col-md-12 align-center contact">        
+      <div class="col-sm-12 align-center contact">        
         <p><img src="<?php echo get_template_directory_uri(); ?>/app/img/map.png"> <?php the_field('address'); ?></p>
       </div>
-      <div class="col-md-12 align-center">
+      <div class="col-sm-12 align-center">
         <button class="first" data-toggle="modal" data-target=".bs-example-modal-lg1"><?php the_field('maps'); ?></button>
         <button class="second" data-toggle="modal" data-target=".zabronirovat"><?php the_field('bron'); ?></button>
       </div>
-      <div class="col-md-8">
+      <div class="col-sm-8">
         <div class="footer-menu">
           <ul>
             <li><a href="#">Главная</a></li>
@@ -50,7 +51,7 @@
         </div>
       </div>
       <? endwhile; endif; wp_reset_query(); ?>
-      <div class="col-md-4 align-right copy">
+      <div class="col-sm-4 align-right copy">
         <p><img src="<?php echo get_template_directory_uri(); ?>/app/img/copy.png"> Разработка сайта: <a href="//el-dom.ua" target="_blank">EL-DOM.UA</a></p>
       </div>
     </div>

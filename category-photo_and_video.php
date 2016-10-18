@@ -5,7 +5,7 @@
     <h1><?php echo get_category_by_slug('photo_and_video')->description; ?></h1>
   </div>
   <div class="bounce">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.4 490.4" style="enable-background:new 0 0 490.4 490.4;" xml:space="preserve" width="60px" height="60px">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.4 490.4" style="enable-background:new 0 0 490.4 490.4;" xml:space="preserve">
     <g>
       <g>
         <path d="M490.4,245.2C490.4,110,380.4,0,245.2,0S0,110,0,245.2s110,245.2,245.2,245.2S490.4,380.4,490.4,245.2z M24.5,245.2 c0-121.7,99-220.7,220.7-220.7s220.7,99,220.7,220.7s-99,220.7-220.7,220.7S24.5,366.9,24.5,245.2z"/>
@@ -24,12 +24,12 @@
     <hr>
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <a href="<?php the_permalink() ?>">
             <?php the_post_thumbnail("thumb"); ?>
           </a>
         </div>
-        <div class="col-md-9">
+        <div class="col-sm-9">
           <a class="a_h3" href="<?php the_permalink() ?>">
             <h3><?php the_title(); ?></h3>        
           </a>
