@@ -34,7 +34,7 @@ Template Name: Главная
       $n=4;
       $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
       <?php while($recent->have_posts()) : $recent->the_post();?>
-      <div class="col-md-3 col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <?php the_post_thumbnail(); ?>
         <?php the_content(); ?>
       </div>
@@ -69,7 +69,7 @@ Template Name: Главная
       $n=8;
       $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
       <?php while($recent->have_posts()) : $recent->the_post();?>
-      <div class="col-sm-3">
+      <div class="col-sm-3 col-xs-6">
         <?php the_post_thumbnail(); ?>
         <?php the_content(); ?>
       </div>
@@ -90,7 +90,7 @@ Template Name: Главная
   $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
   <?php while($recent->have_posts()) : $recent->the_post();?>
   <a href="<?php the_permalink() ?>">
-    <div class="col-md-3 col-sm-4 flex about-item" style="background-image: url(<?php $thumb_id = get_post_thumbnail_id();
+    <div class="col-md-3 col-sm-4 col-xs-6 flex about-item" style="background-image: url(<?php $thumb_id = get_post_thumbnail_id();
                                                  $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
                                                  echo $thumb_url[0]; ?>)">
       <h3><?php the_title(); ?></h3>
@@ -109,7 +109,7 @@ Template Name: Главная
         <h2>Номера и цены</h2>
       </div>
       <?php while($recent->have_posts()) : $recent->the_post();?>
-      <div class="col-md-3 col-sm-4">
+      <div class="col-md-3 col-sm-4 col-xs-6">
         <div class="one-product">
           <?php the_post_thumbnail(); ?>
           <h3><?php the_title() ?></h3>
@@ -126,12 +126,12 @@ Template Name: Главная
 
 <section class="photogallery">
   <div class="row">
-    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery1.png" alt=""></div>
-    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery2.png" alt=""></div>
-    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery3.png" alt=""></div>
-    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery4.png" alt=""></div>
-    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery5.png" alt=""></div>
-    <div class="col-sm-4"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery6.png" alt=""></div>
+    <div class="col-sm-4 col-xs-6"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery1.png" alt=""></div>
+    <div class="col-sm-4 col-xs-6"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery2.png" alt=""></div>
+    <div class="col-sm-4 col-xs-6"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery3.png" alt=""></div>
+    <div class="col-sm-4 col-xs-6"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery4.png" alt=""></div>
+    <div class="col-sm-4 col-xs-6"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery5.png" alt=""></div>
+    <div class="col-sm-4 col-xs-6"><img src="<?php echo get_template_directory_uri(); ?>/app/img/photogallery6.png" alt=""></div>
   </div>
 </section>
 

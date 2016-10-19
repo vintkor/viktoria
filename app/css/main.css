@@ -1213,3 +1213,46 @@ footer {
   #yamaps {
     height: 300px;
     padding: 10px; } }
+
+@media (max-width: 768px) {
+  /* ___________________________ section vigoda ___________________________ */
+  .vigoda .super-img {
+    display: none; }
+  /* ___________________________ section triggers-2 ___________________________ */
+  .triggers-2 .col-xs-6:nth-child(2n+1) {
+    clear: both; }
+  /* ___________________________ section products ___________________________ */
+  .products {
+    padding: 30px 0; }
+    .products h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+      top: 15px;
+      position: relative; }
+    .products .one-product {
+      margin-bottom: 30px; }
+      .products .one-product h3 {
+        font-size: 14px;
+        font-weight: 100; }
+      .products .one-product .wrapper .price {
+        font-size: 18px;
+        padding-top: 10px; }
+      .products .one-product .wrapper a {
+        padding: 8px 14px;
+        font-size: 12px; }
+  .product-item {
+    padding: 0;
+    margin-bottom: 50px; }
+    .product-item:nth-child(odd) {
+      padding-right: 0; }
+    .product-item:nth-child(even) {
+      padding-left: 0; }
+  /* ___________________________ section about ___________________________ */
+  .about .about-item {
+    height: -webkit-calc(100vw / 2 - 30px);
+    height: calc(100vw / 2 - 30px); }
+  /* ___________________________ section responce ___________________________ */
+  .responce blockquote {
+    font-size: 12px;
+    padding-left: 0;
+    background: #fff; } }

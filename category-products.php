@@ -21,10 +21,10 @@
 <section id="bounce" class="product-list">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0">
+      <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
         <div class="row">
           <?php if (have_posts()): while (have_posts()): the_post(); ?>
-          <div class="col-sm-6 product-item align-center">
+          <div class="col-xs-8 col-xs-offset-2 col-sm-offset-0 col-sm-6 product-item align-center">
             <div class="wrapper">
               <span class="thumb"><?php the_post_thumbnail(); ?></span>
               <div class="price flex">
@@ -36,10 +36,10 @@
               <div class="content">
                 <?php the_content(); ?>                
               </div>
-              <div class="col-sm-6 bron">
+              <div class="col-xs-6 bron">
                 <a href="#" data-toggle="modal" data-target=".zabronirovat-<?php the_ID(); ?>">Забронировать</a>
               </div>
-              <div class="col-sm-6 more">
+              <div class="col-xs-6 more">
                 <a class="" href="<?php the_permalink() ?>">Подробнее >></a>                
               </div>
             </div>

@@ -31,7 +31,7 @@ Template Name: Для вас
          <?php
             for($i = 1; $i < 7; $i++) {
 
-                echo "<div class='col-sm-6 gallery-item' style='background-image: url("; the_field("for_you_img_$i"); echo ")'>";
+                echo "<div class='col-xs-6 gallery-item' style='background-image: url("; the_field("for_you_img_$i"); echo ")'>";
                 echo "<a class='item' href='"; the_field("for_you_img_$i"); echo "'>";
 
                 echo "<img class='hidden' src='"; the_field("for_you_img_$i"); echo "'>";
