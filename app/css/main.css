@@ -130,12 +130,12 @@ a:hover {
   text-decoration: none; }
 
 div, span, p, li, a {
-  font-family: "Roboto Condensed";
+  font-family: "Open Sans";
   font-weight: 300;
   font-size: 15px; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Condensed";
+  font-family: "Open Sans";
   font-weight: 500; }
 
 /* ___________________________headroom___________________________ */
@@ -204,7 +204,8 @@ header {
       header nav ul li a {
         display: block;
         font-size: 12px;
-        padding: 20px 10px;
+        font-weight: 300;
+        padding: 20px 8px;
         text-transform: uppercase;
         color: #fff;
         position: relative; }
@@ -231,7 +232,7 @@ header {
           header nav ul li a:hover:before {
             right: 0; }
   header p {
-    padding-top: 15px;
+    padding-top: 17px;
     font-size: 14px;
     margin: 0;
     color: #fff; }
@@ -250,16 +251,20 @@ header {
   transition: .2s;
   margin-left: 2px; }
   .lang li:hover {
-    -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-            transform: scale(1.3); }
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1); }
 
 .lang .active {
-  border-bottom: 1px solid #fff; }
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 1px 7px 3px 7px;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 3px;
+          border-radius: 3px; }
 
 /* ___________________________ section slider ___________________________ */
 .slider {
-  height: 100vh;
+  height: 670px;
   background-size: cover;
   background-position: bottom;
   position: relative;
@@ -277,83 +282,39 @@ header {
   .slider button {
     background: #FFC022;
     border: none;
-    padding: 10px 35px;
+    padding: 14px 35px;
     -webkit-border-radius: 3px;
             border-radius: 3px;
     z-index: 20;
     text-transform: uppercase;
     -webkit-transition: .2s;
     transition: .2s;
-    -webkit-box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3); }
+    color: #905D4C; }
     .slider button:hover {
       background: #eeaa00; }
   .slider .h-1 {
     text-align: center;
     width: 100%;
     position: relative;
-    margin-bottom: 60px; }
+    margin-bottom: 20px;
+    width: 50%;
+    opacity: .9; }
+  .slider hr {
+    width: 5000px;
+    border-color: transparent; }
   .slider h1 {
+    text-transform: uppercase;
     margin: 0 auto;
     max-width: 800px;
     color: #fff;
-    background: rgba(187, 35, 45, 0.8);
-    padding: 7px 15px;
-    line-height: 50px;
-    font: 40px "Roboto Condensed";
+    font: 33px "Open Sans";
     font-weight: 700;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); }
-  .slider:after, .slider:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 30vh;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.5)));
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
-    bottom: 0;
-    left: 0; }
-  .slider:before {
-    top: 0;
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.2)));
-    background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2));
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)); }
-  .slider .bounce {
-    z-index: 10;
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    margin-left: -30px;
-    width: 60px;
-    height: 60px;
-    -webkit-animation: bounce 2s ease infinite;
-            animation: bounce 2s ease infinite; }
-    .slider .bounce svg {
-      fill: #fff; }
-    .slider .bounce a {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0; }
-
-@-webkit-keyframes bounce {
-  0% {
-    bottom: 30px; }
-  50% {
-    bottom: 60px; }
-  100% {
-    bottom: 30px; } }
-
-@keyframes bounce {
-  0% {
-    bottom: 30px; }
-  50% {
-    bottom: 60px; }
-  100% {
-    bottom: 30px; } }
+    display: inline;
+    -webkit-box-shadow: -10px 0px 0 #B6434B, 10px 0px 0 #B6434B;
+            box-shadow: -10px 0px 0 #B6434B, 10px 0px 0 #B6434B;
+    background: none repeat #B6434B;
+    padding: 4px 0;
+    line-height: 60px; }
 
 /* ___________________________ section category-products inner-page ___________________________ */
 .product-list {
@@ -368,7 +329,7 @@ header {
     padding-left: 25px; }
   .product-item .wrapper {
     padding: 0px 0px 30px 0px;
-    border-bottom: 3px solid #BB232D;
+    border-bottom: 3px solid #B6434B;
     background: #ECE7DE; }
     .product-item .wrapper h2 {
       padding: 12px 0;
@@ -466,9 +427,9 @@ header {
     .photo_and_video .a_h3:hover {
       background: #ECE7DE; }
       .photo_and_video .a_h3:hover h3 {
-        color: #BB232D; }
+        color: #B6434B; }
   .photo_and_video a h3 {
-    color: #901b23;
+    color: #91353c;
     margin: 0;
     padding: 0;
     -webkit-transition: .2s;
@@ -515,7 +476,7 @@ header {
   padding: 20px 0 60px; }
   .vigoda-inner h1 {
     margin-bottom: 40px;
-    color: #901b23;
+    color: #91353c;
     margin-left: 40px; }
   .vigoda-inner .price {
     width: 140px;
@@ -565,15 +526,15 @@ header {
     display: block; }
   .vigoda-inner .d3 {
     margin-left: 40px;
-    border: 1px solid #BB232D;
-    color: #BB232D;
+    border: 1px solid #B6434B;
+    color: #B6434B;
     padding: 7px 25px;
     -webkit-border-radius: 3px;
             border-radius: 3px;
     -webkit-transition: .2s;
     transition: .2s; }
     .vigoda-inner .d3:hover {
-      background: #BB232D;
+      background: #B6434B;
       color: #fff; }
   .vigoda-inner .img_gallery {
     position: relative;
@@ -637,20 +598,23 @@ header {
 /* ___________________________ section triggers ___________________________ */
 .triggers {
   background: #905D4C;
-  padding: 40px 0;
+  padding: 38px 0 34px;
   text-align: center; }
   .triggers img {
-    margin-bottom: 30px; }
+    margin-bottom: 34px; }
   .triggers p {
     color: #fff;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-bottom: 0; }
 
 /* ___________________________ section vigoda ___________________________ */
 .vigoda {
   position: relative;
   background: #ECE7DE; }
+  .vigoda .wrapper {
+    padding-left: 40px; }
   .vigoda h2 {
-    margin-top: 140px;
+    margin-top: 100px;
     color: #905D4C; }
   .vigoda img {
     width: 100%;
@@ -658,7 +622,7 @@ header {
   .vigoda h2 {
     margin-bottom: 40px; }
   .vigoda a {
-    background: #BB232D;
+    background: #B6434B;
     padding: 10px 20px;
     color: #fff;
     font-size: 16px;
@@ -668,9 +632,9 @@ header {
     display: inline-block;
     -webkit-transition: .2s;
     transition: .2s;
-    margin-bottom: 140px; }
+    margin-bottom: 100px; }
     .vigoda a:hover {
-      background: #901b23; }
+      background: #91353c; }
   .vigoda p {
     color: #666666;
     font-size: 17px; }
@@ -693,47 +657,36 @@ header {
     background-position: center center;
     background-repeat: no-repeat;
     padding: 0;
-    height: -webkit-calc(100vw / 4 - 100px);
-    height: calc(100vw / 4 - 100px);
+    height: -webkit-calc(100vw / 4);
+    height: calc(100vw / 4);
     -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
-            justify-content: center;
-    position: relative; }
-    .about .about-item:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      -webkit-transition: .4s;
-      transition: .4s; }
-    .about .about-item:hover h3 {
-      -webkit-transform: translateY(-webkit-calc(100vw / 16));
-          -ms-transform: translateY(calc(100vw / 16));
-              transform: translateY(calc(100vw / 16)); }
-    .about .about-item:hover:after {
-      background: transparent; }
+            justify-content: center; }
   .about img {
     width: 100%;
     height: auto; }
+  .about .wrapper {
+    position: relative;
+    top: 50%;
+    left: 15px;
+    width: 75%;
+    opacity: .9; }
   .about h3 {
-    background: rgba(187, 35, 45, 0.8);
     color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    max-width: 60%;
-    text-align: center;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    font-size: 17px;
+    text-align: left;
     -webkit-transition: .2s;
     transition: .2s;
-    position: relative;
     z-index: 20;
-    font-weight: 400;
-    font-family: "Open Sans"; }
+    font-weight: 300;
+    font-family: "Open Sans";
+    display: inline;
+    -webkit-box-shadow: -10px 0px 0 #B6434B, 10px 0px 0 #B6434B;
+            box-shadow: -10px 0px 0 #B6434B, 10px 0px 0 #B6434B;
+    background: none repeat #B6434B;
+    padding: 4px 0;
+    line-height: 35px; }
 
 /* ___________________________ section triggers-2 ___________________________ */
 .triggers-2 {
@@ -742,7 +695,10 @@ header {
   .triggers-2 img {
     margin-bottom: 30px; }
   .triggers-2 p {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    color: #63636d; }
+  .triggers-2 .col-sm-3:nth-child(5n) {
+    clear: both; }
   .triggers-2 .more p {
     margin-top: 40px;
     color: #905D4C;
@@ -764,14 +720,6 @@ header {
     margin-bottom: 30px;
     -webkit-transition: .2s;
     transition: .2s; }
-    .products .one-product:hover {
-      -webkit-transform: translateY(-5px);
-          -ms-transform: translateY(-5px);
-              transform: translateY(-5px); }
-      .products .one-product:hover .wrapper {
-        -webkit-transform: translateY(5px);
-            -ms-transform: translateY(5px);
-                transform: translateY(5px); }
     .products .one-product img {
       width: 100%;
       height: auto; }
@@ -780,7 +728,9 @@ header {
       color: #fff;
       font-size: 18px;
       padding: 10px 0;
-      margin: 0; }
+      margin: 0;
+      font-family: "Open Sans";
+      font-weight: 300; }
     .products .one-product .wrapper {
       background: #fff;
       -webkit-transition: .2s;
@@ -789,28 +739,29 @@ header {
         color: #905D4C;
         font-size: 40px;
         font-family: "Open Sans";
-        font-weight: 900;
-        padding-top: 20px;
-        position: relative; }
+        font-weight: 700;
+        padding-top: 13px;
+        position: relative;
+        padding-bottom: 10px; }
         .products .one-product .wrapper .price:after {
           content: "";
           display: block;
           position: absolute;
           bottom: -6px;
           left: 50%;
-          width: 120px;
-          margin-left: -60px;
-          height: 2px;
+          width: 140px;
+          margin-left: -70px;
+          height: 3px;
           background: #905D4C; }
       .products .one-product .wrapper a {
-        padding: 10px 20px;
-        color: #BB232D;
+        padding: 18px 20px;
+        color: #B6434B;
         font-size: 16px;
         display: block;
         -webkit-transition: .2s;
         transition: .2s; }
         .products .one-product .wrapper a:hover {
-          background: #e6e6e6; }
+          text-decoration: underline; }
 
 /* ___________________________ section photogallery ___________________________ */
 .photogallery .col-sm-4 {
@@ -825,12 +776,13 @@ header {
   padding: 60px 0; }
   .responce blockquote {
     font-family: "Open Sans Italic";
-    font-size: 15px;
+    font-size: 16px;
+    color: #666;
     padding-left: 70px;
     border: none;
     background: url("../img/otzyv.png") no-repeat left top; }
   .responce a {
-    background: #BB232D;
+    background: #B6434B;
     padding: 10px 20px;
     color: #fff;
     font-size: 16px;
@@ -841,7 +793,7 @@ header {
     -webkit-transition: .2s;
     transition: .2s; }
     .responce a:hover {
-      background: #901b23; }
+      background: #91353c; }
   .responce h5 {
     padding-left: 70px;
     font-family: "Open Sans Semi Bold Italic";
@@ -855,7 +807,7 @@ header {
   padding-left: 70px;
   background: url("../img/otzyv.png") no-repeat 13px 24px; }
   .responce-inner .testimonial-inner .readmore {
-    color: #901b23;
+    color: #91353c;
     display: block; }
 
 .responce-inner .testimonial-name {
@@ -867,7 +819,7 @@ header {
 /* ___________________________ footer ___________________________ */
 footer {
   background: #905D4C;
-  padding: 30px 0; }
+  padding: 60px 0 30px; }
   footer p, footer a, footer h2 {
     color: #fff; }
   footer a {
@@ -936,7 +888,8 @@ footer {
   footer .triggers p {
     font-size: 12px;
     text-align: left;
-    font-family: "Open Sans"; }
+    font-family: "Open Sans";
+    padding-left: 20px; }
   footer .triggers img {
     text-align: right;
     margin-bottom: 0;
@@ -945,7 +898,8 @@ footer {
   footer .contact {
     margin-top: 30px; }
     footer .contact img {
-      width: 16px;
+      width: 32px;
+      margin-right: 15px;
       height: auto;
       position: relative;
       top: -2px; }
@@ -974,7 +928,7 @@ footer {
   padding: 20px; }
 
 .form-red {
-  color: #BB232D;
+  color: #B6434B;
   font: inherit; }
 
 .modal-content {
@@ -1100,7 +1054,7 @@ footer {
     padding: 20px 0 60px; }
     .vigoda-inner h1 {
       margin-bottom: 40px;
-      color: #901b23;
+      color: #91353c;
       margin-left: 40px;
       font-size: 18px; }
     .vigoda-inner p {

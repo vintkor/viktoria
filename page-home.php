@@ -12,18 +12,8 @@ Template Name: Главная
   <div class="h-1">
     <h1><?php the_field('home_desc'); ?></h1>
   </div>
+  <hr>
   <button data-toggle="modal" data-target=".zabronirovat"><?php the_field('bron', 159); ?></button>
-    <div class="bounce">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.4 490.4" style="enable-background:new 0 0 490.4 490.4;" xml:space="preserve">
-    <g>
-      <g>
-        <path d="M490.4,245.2C490.4,110,380.4,0,245.2,0S0,110,0,245.2s110,245.2,245.2,245.2S490.4,380.4,490.4,245.2z M24.5,245.2 c0-121.7,99-220.7,220.7-220.7s220.7,99,220.7,220.7s-99,220.7-220.7,220.7S24.5,366.9,24.5,245.2z"/>
-        <path d="M253.9,360.4l68.9-68.9c4.8-4.8,4.8-12.5,0-17.3s-12.5-4.8-17.3,0l-48,48V138.7c0-6.8-5.5-12.3-12.3-12.3    s-12.3,5.5-12.3,12.3v183.4l-48-48c-4.8-4.8-12.5-4.8-17.3,0s-4.8,12.5,0,17.3l68.9,68.9c2.4,2.4,5.5,3.6,8.7,3.6    S251.5,362.8,253.9,360.4z"/>
-      </g>
-    </g>
-    </svg>
-    <a href="#triggers"></a>
-  </div>
 </section>
 <?php endwhile; endif;?>
 
@@ -51,9 +41,11 @@ Template Name: Главная
       <div class="col-sm-12">
         <div class="row">
           <div class="col-sm-6 col-sm-offset-6">
-            <h2><?php the_title();?></h2>
-            <?php the_content() ?>
-            <a href="<?php the_permalink() ?>">Подробнее >></a>
+            <div class="wrapper">
+              <h2><?php the_title();?></h2>
+              <?php the_content() ?>
+              <a href="<?php the_permalink() ?>">Подробнее >></a>
+            </div>
           </div>
         </div>
       </div>
@@ -61,6 +53,21 @@ Template Name: Главная
   </div>
   <? endwhile; endif; wp_reset_query(); ?>
 </section>
+
+<section class="about">
+  <?php $idObj = get_category_by_slug('infrastructure'); $id = $idObj->term_id;
+  $n=12;
+  $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
+  <?php while($recent->have_posts()) : $recent->the_post();?>
+    <div class="col-md-3 col-sm-4 col-xs-6 about-item" style="background-image: url(<?php $thumb_id = get_post_thumbnail_id();
+                                                 $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+                                                 echo $thumb_url[0]; ?>)">
+      <div class="wrapper"><h3><?php the_title(); ?></h3></div>
+    </div>
+  <?php endwhile; wp_reset_query(); ?>
+</section>
+
+<div class="clearfix"></div>
 
 <section class="triggers-2 align-center">
   <div class="container">
@@ -82,21 +89,6 @@ Template Name: Главная
       </div>
     </div>
   </div>
-</section>
-
-<section class="about">
-  <?php $idObj = get_category_by_slug('infrastructure'); $id = $idObj->term_id;
-  $n=12;
-  $recent = new WP_Query("cat=$id&showposts=$n&order=asc");?>
-  <?php while($recent->have_posts()) : $recent->the_post();?>
-  <a href="<?php the_permalink() ?>">
-    <div class="col-md-3 col-sm-4 col-xs-6 flex about-item" style="background-image: url(<?php $thumb_id = get_post_thumbnail_id();
-                                                 $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
-                                                 echo $thumb_url[0]; ?>)">
-      <h3><?php the_title(); ?></h3>
-    </div>
-  </a>
-  <?php endwhile; wp_reset_query(); ?>
 </section>
 
 <section class="products">
@@ -142,13 +134,13 @@ Template Name: Главная
         <blockquote>
           Отдыхали всей семьёй летом. Очень понравилось. Во-первых, очень чисто. В номерах пахнет деревом. Всё выглядит новым и аккуратным. Не смотря на солнце на улице в номере всегда свежо. Есть бассейн с подогревом. Отдых не хуже, чем в Европе. Машину не пришлось ставить где-то далеко, есть рядом своя парковка. В отеле свой ресторан. Как не странно, во всех остальных местах в Буковели цены на питание были заметно выше, чем здесь. Нам всем очень понравилось.
         </blockquote>
-        <h5>Катя Киев</h5>
+        <h5>Катя, Киев</h5>
       </div>
       <div class="col-md-5 col-sm-6">
         <blockquote>
           Цены на проживание не ниже и не выше, чем в любом другом отеле в Украине в данный период времени. Есть разные номера, на любой кошелёк. Но при этом во всех номерах чисто, комфортно, уютно и приятно пахнет деревом. Зимой с друзьями были на разных курортах Европы. Поэтому очень были удивлены, что в Буковели всё новее, удобнее, лучше и, самое главное, дешевле обходится, как само катание, так и, особенно, проживание. А уровень данного отеля ничем не хуже европейских аналогов.
         </blockquote>
-        <h5>Елена Днепропетровск</h5>
+        <h5>Елена, Днепропетровск</h5>
       </div>
       <div class="col-sm-12 align-center">
         <a href="/%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%D1%8B">Читать все отзывы >></a>

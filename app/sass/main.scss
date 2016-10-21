@@ -1,7 +1,7 @@
 $white: #fff;
 $black: #000;
 
-$red: #BB232D;
+$red: #B6434B;
 $bad-red: #905D4C;
 $yellow: #FFC022;
 $bad-yellow: #ECE7DE;
@@ -70,12 +70,12 @@ a:hover {
 }
 
 div,span,p,li,a {
-	font-family: "Roboto Condensed";
+	font-family: "Open Sans";
 	font-weight: 300;
 	font-size: 15px;
 }
 h1,h2,h3,h4,h5,h6 {
-	font-family: "Roboto Condensed";
+	font-family: "Open Sans";
 	font-weight: 500;
 }
 
@@ -142,7 +142,8 @@ header {
 				a {
 					display: block;
 					font-size: 12px;
-					padding: 20px 10px;
+					font-weight: 300;
+					padding: 20px 8px;
 					text-transform: uppercase;
 					color: $white;
 					position: relative;
@@ -181,7 +182,7 @@ header {
 		}
 	}
 	p {
-		padding-top: 15px;
+		padding-top: 17px;
 		font-size: 14px;
 		margin: 0;
 		color: $white;
@@ -203,18 +204,21 @@ header {
 		transition: .2s;
 		margin-left: 2px;
 		&:hover {
-			transform: scale(1.3);
+			transform: scale(1.1);
 		}
 	}
 	.active {
-		border-bottom: 1px solid $white;
+		border: 1px solid rgba($white, .8);
+		padding: 1px 7px 3px 7px;
+		background: rgba($black, .3);
+		border-radius: 3px;
 	}
 }
 
 /* ___________________________ section slider ___________________________ */
 
 .slider {
-	height: 100vh;
+	height: 670px;
 	background-size: cover;
 	background-position: bottom;
 	position: relative;
@@ -225,12 +229,12 @@ header {
 	button {
 		background: $yellow;
 		border: none;
-		padding: 10px 35px;
+		padding: 14px 35px;
 		border-radius: 3px;
 		z-index: 20;
 		text-transform: uppercase;
 		transition: .2s;
-		box-shadow: 0 0 15px 5px rgba($black, .3);
+		color: #905D4C;
 		&:hover {
 			background: darken($yellow, 10%);
 		}
@@ -239,63 +243,27 @@ header {
 		text-align: center;
 		width: 100%;
 		position: relative;
-		margin-bottom: 60px;
+		margin-bottom: 20px;
+		width: 50%;
+		opacity: .9;
+	}
+	hr {
+		width: 5000px;
+		border-color: transparent;
 	}
 	h1 {
+		text-transform: uppercase;
 		margin: 0 auto;
 		max-width: 800px;
 		color: $white;
-		background: rgba($red, .8);
-		padding: 7px 15px;
-		line-height: 50px;
-		font: 40px "Roboto Condensed";
+		font: 33px "Open Sans";
 		font-weight: 700;
-		text-shadow: 1px 1px 1px rgba($black, .4);
+		display: inline;
+		box-shadow: -10px 0px 0 #B6434B, 10px 0px 0 #B6434B;
+		background: none repeat #B6434B;
+		padding: 4px 0;
+		line-height: 60px;
 	}
-	&:after,
-	&:before {
-		content: "";
-		display: block;
-		position: absolute;
-		width: 100%;
-		height: 30vh;
-		background: linear-gradient(180deg, rgba($white, 0), rgba($black, .5));
-		bottom: 0;
-		left: 0;
-	}
-	&:before {
-		top: 0;
-		background: linear-gradient(0deg, rgba($white, 0), rgba($black, .2));
-	}
-	.bounce {
-		z-index: 10;
-		position: absolute;
-		bottom: 30px;
-		left: 50%;
-		margin-left: -30px;
-		width: 60px;
-		height: 60px;
-		animation: bounce 2s ease infinite;
-
-		svg {
-			fill: $white;
-		}
-
-		a {
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-		}
-	}
-}
-
-@keyframes bounce {
-	0% {bottom: 30px}
-	50% {bottom: 60px}
-	100% {bottom: 30px}
 }
 
 /* ___________________________ section category-products inner-page ___________________________ */
@@ -618,14 +586,15 @@ header {
 
 .triggers {
 	background: $bad-red;
-	padding: 40px 0;
+	padding: 38px 0 34px;
 	text-align: center;
 	img {
-		margin-bottom: 30px;
+		margin-bottom: 34px;
 	}
 	p {
 		color: $white;
 		text-transform: uppercase;
+		margin-bottom: 0;
 	}
 }
 
@@ -634,8 +603,11 @@ header {
 .vigoda {
 	position: relative;
 	background: $bad-yellow;
+	.wrapper {
+		padding-left: 40px;
+	}
 	h2 {
-		margin-top: 140px;
+		margin-top: 100px;
 		color: $bad-red;
 	}
 	img {
@@ -654,7 +626,7 @@ header {
 		margin-top: 40px;
 		display: inline-block;
 		transition: .2s;
-		margin-bottom: 140px;
+		margin-bottom: 100px;
 		&:hover {
 			background: darken($red, 10%);
 		}
@@ -685,46 +657,33 @@ header {
 		background-position: center center;
 		background-repeat: no-repeat;
 		padding: 0;
-		height: calc(100vw / 4 - 100px);
+		height: calc(100vw / 4 );
 		justify-content: center;
-		position: relative;
-		&:after {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: rgba($black, .4);
-			transition: .4s;
-		}
-		&:hover {
-			h3 {
-				transform: translateY(calc(100vw / 16));
-			}
-			&:after {
-				background: rgba($black, 0);
-			}
-		}
 	}
 	img {
 		width: 100%;
 		height: auto;
 	}
-	h3 {
-		background: rgba($red, .8);
-		color: $white;
-		padding: 10px 20px;
-		font-size: 16px;
-		max-width: 60%;
-		text-align: center;
-		text-shadow: 1px 1px 1px rgba($black, .4);
-		transition: .2s;
+	.wrapper {
 		position: relative;
+		top: 50%;
+		left: 15px;
+		width: 75%;
+		opacity: .9;
+	}
+	h3 {
+		color: $white;
+		font-size: 17px;
+		text-align: left;
+		transition: .2s;
 		z-index: 20;
-		font-weight: 400;
+		font-weight: 300;
 		font-family: "Open Sans";
+		display: inline;
+		box-shadow: -10px 0px 0 #B6434B, 10px 0px 0 #B6434B;
+		background: none repeat #B6434B;
+		padding: 4px 0;
+		line-height: 35px;
 	}
 }
 
@@ -738,6 +697,10 @@ header {
 	}
 	p {
 		text-transform: uppercase;
+		color: #63636d;
+	}
+	.col-sm-3:nth-child(5n) {
+		clear: both;
 	}
 	.more {
 		p {
@@ -766,12 +729,6 @@ header {
 		text-align: center;
 		margin-bottom: 30px;
 		transition: .2s;
-		&:hover {
-			transform: translateY(-5px);
-			.wrapper {
-				transform: translateY(5px);
-			}
-		}
 		img {
 			width: 100%;
 			height: auto;
@@ -782,37 +739,40 @@ header {
 			font-size: 18px;
 			padding: 10px 0;
 			margin: 0;
+			font-family: "Open Sans";
+   			font-weight: 300;
 		}
 		.wrapper {
 			background: $white;
 			transition: .2s;
 			.price {
-				color: $bad-red;
+				color: #905D4C;
 				font-size: 40px;
 				font-family: "Open Sans";
-				font-weight: 900;
-				padding-top: 20px;
+				font-weight: 700;
+				padding-top: 13px;
 				position: relative;
+				padding-bottom: 10px;
 				&:after {
 					content: "";
 					display: block;
 					position: absolute;
 					bottom: -6px;
 					left: 50%;
-					width: 120px;
-					margin-left: -60px;
-					height: 2px;
+					width: 140px;
+					margin-left: -70px;
+					height: 3px;
 					background: $bad-red;
 				}
 			}
 			a {
-				padding: 10px 20px;
+				padding: 18px 20px;
 				color: $red;
 				font-size: 16px;
 				display: block;
 				transition: .2s;
 				&:hover {
-					background: darken($white, 10%);
+					text-decoration: underline;
 				}
 			}
 		}
@@ -838,7 +798,8 @@ header {
 	padding: 60px 0;
 	blockquote {
 		font-family: "Open Sans Italic";
-		font-size: 15px;
+		font-size: 16px;
+   		color: #666;
 		padding-left: 70px;
 		border: none;
 		background: url("../img/otzyv.png") no-repeat left top;
@@ -890,7 +851,7 @@ header {
 
 footer {
 	background: $bad-red;
-	padding: 30px 0;
+	padding: 60px 0 30px;
 	p,a,h2 {
 		color: $white;
 	}
@@ -978,6 +939,7 @@ footer {
 			font-size: 12px;
 			text-align: left;
 			font-family: "Open Sans";
+			padding-left: 20px;
 		}
 		img {
 			text-align: right;
@@ -989,7 +951,8 @@ footer {
 	.contact {
 		margin-top: 30px;
 		img {
-			width: 16px;
+			width: 32px;
+			margin-right: 15px;
 			height: auto;
 			position: relative;
 			top: -2px;
